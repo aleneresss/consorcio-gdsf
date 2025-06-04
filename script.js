@@ -1,24 +1,21 @@
 function capturarCarta(){
 
     const comissao = {
-      1: {leve: 0.0022, pesada: 0.0033},
-      2: {leve: 0.0012, pesada: 0.0044},
-      3: {leve: 0.0012, pesada: 0.0055},
-      4: {leve: 0.0012, pesada: 0.0066},
-      5: {leve: 0.0011, pesada: 0.0077},
-      6: {leve: 0.0011, pesada: 0.0088},
+      1: {leve: 0.0022, pesada: 0.0025},
+      2: {leve: 0.0012, pesada: 0.0015},
+      3: {leve: 0.0012, pesada: 0.0015},
+      4: {leve: 0.0012, pesada: 0.0015},
+      5: {leve: 0.0011, pesada: 0.0012},
+      6: {leve: 0.0011, pesada: 0.0012},
     }
-    
-    const inputs = document.getElementsByClassName('parcelacarta');
-    const valores = Array.from(inputs).map(input => input.value.replace(/\./g, ''));
-    console.log(valores)
+    const valores = Array.from(document.getElementsByClassName('parcelacarta')).map(input => input.value.replace(/\./g, ''));
     
     const parc = document.getElementById('peso').value === 'leve'? 
     valores.map((p, i) => p * comissao[i+1].leve) :
     valores.map((p, i) => p * comissao[i+1].pesada);
+
     const soma = parc.reduce(  (accumulator, currentValue) => accumulator + currentValue, 0,);
 
-    
     document.querySelector(".total").innerHTML = `
       <div class="liberado"><p><big>Total Comissão: <strong>${brl(soma)}</strong></big></p></div>
       <ul id="listaParcelas"></ul>
