@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimOFF GDSF</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="favicon.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+            <div class="container">
+                <h1>Remuneração Consórcio</h1>
+
+                <div class="layout">
+                    <div class="col-left">
+                        <h2>Valor Carta Leve:</h2>
+
+                        <div class="input-group">
+                            <br>
+                            <input type="number" id="parcela-01" placeholder="1° Parcela" class="parcelacarta">
+                            <input type="number" id="parcela-02" placeholder="2° Parcela" class="parcelacarta">
+                            <input type="number" id="parcela-03" placeholder="3° Parcela" class="parcelacarta">
+                            <input type="number" id="parcela-04" placeholder="4° Parcela" class="parcelacarta">
+                            <input type="number" id="parcela-05" placeholder="5° Parcela" class="parcelacarta">
+                            <input type="number" id="parcela-06" placeholder="6° Parcela" class="parcelacarta">
+                        </div>
+                    </div>
+
+                    <div class="col-middle">
+                        <h2>Remuneração:</h2>
+                        <ul id="listaParcelas"></ul>
+                        <div class="total"></div>
+                    </div>
+                    <div class="col-right">
+                        <label for="peso">Tipo de Carta</label>
+                        <select id="peso" name="peso">
+                            <option value="LEVE">LEVE</option>
+                            <option value="PESADA">PESADA</option>
+                        </select>
+                        
+                    <button onclick="capturarCarta()" class="btn">Calcular Remuneração</button>    
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+        <div class="creds">
+            <p>Alessandro Neres</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
