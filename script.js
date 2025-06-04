@@ -33,24 +33,16 @@ function capturarCarta(){
 function brl(float) {
    return float.toLocaleString('pt-br',{style: 'currency', currency: 'brl'});
 }
-
-function dot(float){
-  return float.toLocaleString('pt-br');
-}
 window.addEventListener('change', capturarCarta);
 window.addEventListener('DOMContentLoaded', capturarCarta);
 
 
-const input = document.getElementById("parcela-01");
+const inputs = document.getElementsByClassName('parcelacarta');
 
-    input.addEventListener('input', () => {
-      let valor = input.value;
-
-      // Remove tudo que não for número
-      valor = valor.replace(/\D/g, '');
-
-      // Formata com pontos
-      valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-      input.value = valor;
-    })
+document.querySelectorAll('.parcelacarta').forEach(input => {
+  input.addEventListener('input', () => {
+    let valor = input.value.replace(/\D/g, '');
+    valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    input.value = valor;
+  });
+});
