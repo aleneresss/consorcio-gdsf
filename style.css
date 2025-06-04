@@ -6,12 +6,12 @@
 }
 
 body {
-    zoom: 130%;
+    zoom: 110%;
     background: linear-gradient(190deg, #001a00, #000);
     color: #fff;
     justify-content: center;
     align-items: center;
-    height: 77vh;
+    height: 90vh;
     padding: 20px;
 }
 
@@ -82,7 +82,7 @@ label {
     margin-bottom: 8px;
 }
 
-input[type="number"], input[type="date"], textarea, select {
+input[type="number"], input[type="text"], textarea, select {
     width: 100%;
     padding: 12px;
     font-size: 14px;
