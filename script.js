@@ -8,6 +8,7 @@ function capturarCarta(){
       5: {leve: 0.0011, pesada: 0.0077},
       6: {leve: 0.0011, pesada: 0.0088},
     }
+    
     const inputs = document.getElementsByClassName('parcelacarta');
     const valores = Array.from(inputs).map(input => input.value.replace(/\./g, ''));
     console.log(valores)
