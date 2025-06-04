@@ -1,12 +1,12 @@
 function capturarCarta(){
 
     const comissao = {
-      1: {leve: 0.0022, pesada: 0.0025},
-      2: {leve: 0.0012, pesada: 0.0015},
-      3: {leve: 0.0012, pesada: 0.0015},
-      4: {leve: 0.0012, pesada: 0.0015},
+      1: {leve: 0.0022, pesada: 0.0012},
+      2: {leve: 0.0012, pesada: 0.0008},
+      3: {leve: 0.0012, pesada: 0.0010},
+      4: {leve: 0.0012, pesada: 0.0012},
       5: {leve: 0.0011, pesada: 0.0012},
-      6: {leve: 0.0011, pesada: 0.0012},
+      6: {leve: 0.0011, pesada: 0.0014},
     }
     const valores = Array.from(document.getElementsByClassName('parcelacarta')).map(input => input.value.replace(/\./g, ''));
     
