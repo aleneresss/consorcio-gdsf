@@ -8,20 +8,20 @@
 body {
     background: linear-gradient(190deg, #001a00, #000);
     color: #fff;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
 }
-
 .container {
     background: #0a0a0a;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 80, 50, 0.5);
     border: 1px solid #004d00;
-    margin-left: -20px;
-    width: 103%;
+    width: 100%;
+    max-width: 1200px;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -31,14 +31,14 @@ h1, p {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 2rem;
     margin-bottom: 15px;
     color: #00cc66;
     text-shadow: 0 0 10px rgba(0, 204, 102, 0.3);
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem;
     color: #a0a0a0;
     margin-bottom: 20px;
     animation: slideUp 0.8s ease-in-out;
@@ -46,21 +46,28 @@ p {
 
 .layout {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     animation: fadeIn 1.2s ease-in-out;
 }
 
 .col-left, .col-middle, .col-right {
-    flex: 1;
+    flex: 1 1 300px;
     padding: 20px;
     background: #121212;
     border: 1px solid #004d00;
     border-radius: 10px;
     transition: 0.3s ease;
+    min-width: 260px;
 }
 
-.col-left { flex: 2; overflow-y: auto; }
-.col-middle { flex: 2; }
+.col-left {
+    flex: 2 1 400px;
+    overflow-y: auto;
+}
+.col-middle {
+    flex: 2 1 400px;
+}
 
 .col-left:hover, .col-middle:hover, .col-right:hover, .col-history:hover {
     transform: translateY(-5px);
@@ -74,7 +81,7 @@ p {
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #33cc88;
     margin-bottom: 8px;
 }
@@ -82,7 +89,7 @@ label {
 input[type="number"], input[type="text"], textarea, select {
     width: 100%;
     padding: 12px;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #fff;
     background: #0d0d0d;
     border: 1px solid #004d00;
@@ -100,7 +107,7 @@ input:focus, textarea:focus, select:focus {
 button {
     width: 100%;
     padding: 14px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     color: #fff;
     background: #006633;
@@ -143,7 +150,7 @@ button:hover {
     padding: 12px;
     border: 1px solid #004d00;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #fff;
     margin-bottom: 10px;
     transition: 0.3s ease;
@@ -242,7 +249,7 @@ input:checked + .slider:before {
 }
 
 big {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #fff;
 }
 
@@ -259,25 +266,29 @@ strong {
     margin-bottom: 10%;
 }
 
+.creds {
+    margin-top: 30px;
+    text-align: center;
+}
+
 .creds p {
     color: #7d7d7d;
-    font-size: 40px;
-    margin-top: 15px;
-    margin-left: 5%;
+    font-size: 2rem;
 }
 
 .image {
-    width: 10%;
-    height: 10%;
-    margin-left: 50%;
+    width: 40px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .chain-shape {
-    width: 100px;  /* ou o tamanho exato da imagem */
-    height: 68px;
+    width: 60px;
+    height: auto;
+    aspect-ratio: 101 / 69;
     background-color: #4CAF50;
     mask-image: url('favicon.png');
-    mask-size: 100% 100%;
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
@@ -285,5 +296,34 @@ strong {
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
-    margin-left: 48%;
+    margin: 20px auto;
+}
+
+/* Media Query: Ajustes para telas menores */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .layout {
+        flex-direction: column;
+    }
+    .creds p {
+        font-size: 1.8rem;
+    }
+    .chain-shape {
+        width: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    button {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+    input, select, textarea {
+        font-size: 0.85rem;
+    }
 }
