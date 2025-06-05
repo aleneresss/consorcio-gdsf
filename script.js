@@ -8,24 +8,40 @@ function capturarCarta(){
       5: {leve: 0.0011, pesada: 0.0012},
       6: {leve: 0.0011, pesada: 0.0014},
     }
-    const valores = Array.from(document.getElementsByClassName('parcelacarta')).map(input => input.value.replace(/\./g, ''));
-    
-    const parc = document.getElementById('peso').value === 'leve'? 
-    valores.map((p, i) => p * comissao[i+1].leve) :
-    valores.map((p, i) => p * comissao[i+1].pesada);
 
-    const soma = parc.reduce(  (accumulator, currentValue) => accumulator + currentValue, 0,);
+    const tipos = ['leve', 'pesada'];
+
+    const parc = {};
+    const soma = {};
+
+    tipos.forEach(tipo => {
+      const valores = Array.from(document.getElementsByClassName(`parcela${tipo}`))
+        .map(input => +input.value.replace(/\./g, ''));
+
+      parc[tipo[0]] = valores.map((v, i) => v * comissao[i + 1][tipo]);
+
+      soma[tipo[0]] = parc[tipo[0]].reduce((a, b) => a + b, 0);
+    });
 
     document.querySelector(".total").innerHTML = `
-      <div class="liberado"><p><big>Total Comissão: <strong>${brl(soma)}</strong></big></p></div>
+      <div class="liberado"><p><big>Total Comissão: <strong>${brl(soma.l)}</strong></big></p></div>
       <ul id="listaParcelas"></ul>
     `;
-    document.getElementById('listaParcelas').innerHTML = parc.map((p, i) => `
+    document.getElementById('listaParcelas').innerHTML = parc.l.map((p, i) => `
       <li>
         <span>Parcela: ${i+1|| "N/A"} - Valor: ${brl(p)}</span>
       </li>
     `).join('');
 
+    document.querySelector(".total2").innerHTML = `
+      <div class="liberado"><p><big>Total Comissão: <strong>${brl(soma.p)}</strong></big></p></div>
+      <ul id="listaParcelas"></ul>
+    `;
+    document.getElementById('listaParcelas2').innerHTML = parc.p.map((p, i) => `
+      <li>
+        <span>Parcela: ${i+1|| "N/A"} - Valor: ${brl(p)}</span>
+      </li>
+    `).join('');
 }
 
 function brl(float) {
@@ -34,10 +50,15 @@ function brl(float) {
 window.addEventListener('change', capturarCarta);
 window.addEventListener('DOMContentLoaded', capturarCarta);
 
+document.querySelectorAll('.parcelaleve').forEach(input => {
+  input.addEventListener('input', () => {
+    let valor = input.value.replace(/\D/g, '');
+    valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    input.value = valor;
+  });
+});
 
-const inputs = document.getElementsByClassName('parcelacarta');
-
-document.querySelectorAll('.parcelacarta').forEach(input => {
+document.querySelectorAll('.parcelapesada').forEach(input => {
   input.addEventListener('input', () => {
     let valor = input.value.replace(/\D/g, '');
     valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");

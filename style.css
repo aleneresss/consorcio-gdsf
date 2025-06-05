@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
+
 .container {
     background: #0a0a0a;
     padding: 20px;
@@ -22,6 +23,7 @@ body {
     border: 1px solid #004d00;
     width: 100%;
     max-width: 1200px;
+    min-height: 70vh;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -46,13 +48,27 @@ p {
 
 .layout {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 20px;
     animation: fadeIn 1.2s ease-in-out;
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
-.col-left, .col-middle, .col-right {
-    flex: 1 1 300px;
+.col-left {
+    flex: 1 1 250px;
+    padding: 20px;
+    background: #121212;
+    border: 1px solid #004d00;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    min-width: 260px;
+    overflow-y: auto;
+}
+
+.col-middle {
+    flex: 2 1 400px;
     padding: 20px;
     background: #121212;
     border: 1px solid #004d00;
@@ -61,15 +77,27 @@ p {
     min-width: 260px;
 }
 
-.col-left {
-    flex: 2 1 400px;
-    overflow-y: auto;
-}
-.col-middle {
-    flex: 2 1 400px;
+.col-middle2 {
+    flex: 1 1 250px;
+    padding: 20px;
+    background: #121212;
+    border: 1px solid #004d00;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    min-width: 260px;
 }
 
-.col-left:hover, .col-middle:hover, .col-right:hover, .col-history:hover {
+.col-right {
+    flex: 2 1 400px;
+    padding: 20px;
+    background: #121212;
+    border: 1px solid #004d00;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    min-width: 260px;
+}
+
+.col-left:hover, .col-middle:hover, .col-right:hover, .col-history:hover:hover, .col-middle2 {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 150, 90, 0.4);
     border-color: #00cc66;
@@ -137,12 +165,12 @@ button:hover {
     background: #004d00;
 }
 
-#listaParcelas, #historicoConsultas {
+#listaParcelas, #historicoConsultas, #listaParcelas2 {
     list-style: none;
     margin-top: 20px;
 }
 
-#listaParcelas li, #historicoConsultas li {
+#listaParcelas li, #historicoConsultas li, #listaParcelas2 li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -156,7 +184,7 @@ button:hover {
     transition: 0.3s ease;
 }
 
-#listaParcelas li:hover, #historicoConsultas li:hover {
+#listaParcelas li:hover, #historicoConsultas li:hover, #listaParcelas2 li:hover {
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(0, 150, 90, 0.4);
     border-color: #00cc66;
@@ -243,7 +271,7 @@ input:checked + .slider:before {
     margin-bottom: 15px;
 }
 
-.total p, .liberado p {
+.total p, .liberado p, .total2 p, .liberado2 p {
     color: inherit;
     margin: 0;
 }
@@ -258,7 +286,7 @@ strong {
     font-weight: 600;
 }
 
-.parcelacarta {
+.parcelaleve, .parcelapesada {
     margin-bottom: 3%;
 }
 
@@ -269,6 +297,7 @@ strong {
 .creds {
     margin-top: 30px;
     text-align: center;
+    width: 100%;
 }
 
 .creds p {
