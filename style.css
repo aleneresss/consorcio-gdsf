@@ -29,7 +29,6 @@ body {
 
 h1, p {
     text-align: center;
-    animation: slideDown 0.8s ease-in-out;
 }
 
 h1 {
@@ -43,7 +42,6 @@ p {
     font-size: 1rem;
     color: #a0a0a0;
     margin-bottom: 20px;
-    animation: slideUp 0.8s ease-in-out;
 }
 
 .layout {

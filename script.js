@@ -47,18 +47,10 @@ function capturarCarta(){
 function brl(float) {
    return float.toLocaleString('pt-br',{style: 'currency', currency: 'brl'});
 }
-window.addEventListener('change', capturarCarta);
+window.addEventListener('input', capturarCarta);
 window.addEventListener('DOMContentLoaded', capturarCarta);
 
-document.querySelectorAll('.parcelaleve').forEach(input => {
-  input.addEventListener('input', () => {
-    let valor = input.value.replace(/\D/g, '');
-    valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    input.value = valor;
-  });
-});
-
-document.querySelectorAll('.parcelapesada').forEach(input => {
+document.querySelectorAll('.parcelaleve, .parcelapesada').forEach(input => {
   input.addEventListener('input', () => {
     let valor = input.value.replace(/\D/g, '');
     valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
