@@ -150,24 +150,10 @@ button:hover {
     transform: translateY(-3px);
 }
 
-.btn-salvar {
-    background: #009933;
-    margin-top: 10px;
-}
-.btn-salvar:hover {
-    background: #007a29;
-}
-.btn-limpar {
-    background: #006600;
-    margin-bottom: 20px;
-}
-.btn-limpar:hover {
-    background: #004d00;
-}
-
 #listaParcelas, #historicoConsultas, #listaParcelas2 {
     list-style: none;
     margin-top: 20px;
+    margin-bottom: 3%;
 }
 
 #listaParcelas li, #historicoConsultas li, #listaParcelas2 li {
@@ -188,48 +174,6 @@ button:hover {
     transform: translateX(5px);
     box-shadow: 0 4px 10px rgba(0, 150, 90, 0.4);
     border-color: #00cc66;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    margin-left: 10px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    inset: 0;
-    background: #004d00;
-    transition: 0.4s;
-    border-radius: 20px;
-}
-
-.slider:before {
-    content: "";
-    position: absolute;
-    height: 80%;
-    width: 40%;
-    left: 5%;
-    bottom: 10%;
-    background: #fff;
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background: #00cc66;
-}
-input:checked + .slider:before {
-    transform: translateX(125%);
 }
 
 @keyframes fadeIn {
@@ -287,7 +231,7 @@ strong {
 }
 
 .parcelaleve, .parcelapesada {
-    margin-bottom: 5%;
+    margin-bottom: 4.7%;
 }
 
 .creds {
