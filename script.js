@@ -24,7 +24,7 @@ function capturarCarta(){
     });
 
     document.querySelector(".total").innerHTML = `
-      <div class="liberado"><p><big>Total Comissão: <strong>${brl(soma.l)}</strong></big></p></div>
+      <div class="liberado"><p><big>Total: <strong>${brl(soma.l)}</strong></big></p></div>
       <ul id="listaParcelas"></ul>
     `;
     document.getElementById('listaParcelas').innerHTML = parc.l.map((p, i) => `
@@ -34,7 +34,7 @@ function capturarCarta(){
     `).join('');
 
     document.querySelector(".total2").innerHTML = `
-      <div class="liberado"><p><big>Total Comissão: <strong>${brl(soma.p)}</strong></big></p></div>
+      <div class="liberado"><p><big>Total: <strong>${brl(soma.p)}</strong></big></p></div>
       <ul id="listaParcelas"></ul>
     `;
     document.getElementById('listaParcelas2').innerHTML = parc.p.map((p, i) => `
