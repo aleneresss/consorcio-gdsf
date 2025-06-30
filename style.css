@@ -1,19 +1,15 @@
 :root {
   --main-color: #00cc66;
 
-  /* Derivações principais */
   --main-color-dark: color-mix(in srgb, black 70%, var(--main-color));
   --main-color-darker: color-mix(in srgb, black 85%, var(--main-color));
   --main-color-light: color-mix(in srgb, white 30%, var(--main-color));
 
-  /* Fundo com mais preto */
   --background-gradient: linear-gradient(190deg, color-mix(in srgb, black 90%, var(--main-color)), black);
 
-  /* Sombras mais fortes e escuras */
   --box-shadow: 0 8px 20px var(--main-color-darker);
   --hover-shadow: 0 8px 20px rgba(0, 150, 90, 0.4);
 
-  /* Fundo, bordas e campos fixos */
   --container-bg: #0a0a0a;
   --panel-bg: #121212;
   --input-bg: #0d0d0d;
